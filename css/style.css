@@ -160,7 +160,7 @@ background-color: blue;
 }
 
 .victory7{
-	display: flex;
+	display: none;
 }
 
 .victory7::after{
