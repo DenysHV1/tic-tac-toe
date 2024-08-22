@@ -16,8 +16,8 @@ body {
 
 .container {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 350px;
+  height: 350px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -29,8 +29,8 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   background-color: rgb(193, 193, 193);
-  width: 152px;
-  height: 152px;
+  width: 304px;
+  height: 304px;
   border-radius: 5px;
   overflow: hidden;
   border: 1px solid black;
@@ -42,20 +42,22 @@ body {
 }
 
 .btn-style {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid black;
   cursor: pointer;
+  font-size: 50px;
 }
 
 .remove-js {
-  position: absolute;
-  top: 90%;
-  left: 57.5%;
-  padding: 5px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 8px;
+  font-size: 20px;
   background-color: rgb(134, 134, 255);
   border-radius: 5px;
   font-weight: 600;
@@ -68,123 +70,150 @@ body {
 
 .style-counter {
   position: absolute;
-  top: 1%;
-  left: 12%;
+  top: -1%;
+  left: 8%;
 }
 
-.victory1{
-	display: none;
+.victory1-js {
+  display: none;
+}
+.victory1-js.is-open {
+  display: flex;
+}
+.victory1-js::after {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 300px;
+  height: 10px;
+  border-radius: 3px;
+  background-color: blue;
 }
 
-.victory1::after{
-	position: absolute;
-	top: 25px;
-	left: 0;
-content: '';
-width: 150px;
-height: 5px;
-background-color: blue;
+.victory2-js {
+  display: none;
+}
+.victory2-js.is-open {
+  display: flex;
+}
+.victory2-js::after {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  content: "";
+  width: 300px;
+  height: 10px;
+  border-radius: 3px;
+  background-color: blue;
 }
 
-.victory2{
-	display: none;
+.victory3-js {
+  display: none;
+}
+.victory3-js.is-open {
+  display: flex;
+}
+.victory3-js::after {
+  position: absolute;
+  top: 250px;
+  left: 0;
+  content: "";
+  width: 300px;
+  height: 10px;
+  border-radius: 3px;
+  background-color: blue;
 }
 
-.victory2::after{
-	position: absolute;
-	top: 75px;
-	left: 0;
-content: '';
-width: 150px;
-height: 5px;
-background-color: blue;
+.victory4-js {
+  display: none;
+}
+.victory4-js.is-open {
+  display: flex;
+}
+.victory4-js::after {
+  position: absolute;
+  top: 146px;
+  left: -99px;
+  content: "";
+  width: 300px;
+  height: 10px;
+  border-radius: 3px;
+  transform: rotate(90deg);
+  background-color: blue;
 }
 
-.victory3{
-	display: none;
+.victory5-js {
+  display: none;
+}
+.victory5-js.is-open {
+  display: flex;
+}
+.victory5-js::after {
+  position: absolute;
+  top: 146px;
+  left: 0;
+  content: "";
+  width: 300px;
+  height: 10px;
+  border-radius: 3px;
+  transform: rotate(90deg);
+  background-color: blue;
 }
 
-.victory3::after{
-	position: absolute;
-	top: 125px;
-	left: 0;
-content: '';
-width: 150px;
-height: 5px;
-background-color: blue;
+.victory6-js {
+  display: none;
+}
+.victory6-js.is-open {
+  display: flex;
+}
+.victory6-js::after {
+  position: absolute;
+  top: 146px;
+  left: 101px;
+  content: "";
+  width: 300px;
+  height: 10px;
+  border-radius: 3px;
+  transform: rotate(90deg);
+  background-color: blue;
 }
 
-.victory4{
-	display: none;
+.victory7-js {
+  display: none;
+}
+.victory7-js.is-open {
+  display: flex;
 }
 
-.victory4::after{
-	position: absolute;
-	top: 75px;
-	left: -50px;
-content: '';
-width: 150px;
-height: 5px;
-transform: rotate(90deg);
-background-color: blue;
+.victory7-js::after {
+  position: absolute;
+  top: 147px;
+  left: -61px;
+  content: "";
+  width: 422px;
+  height: 10px;
+  border-radius: 3px;
+  transform: rotate(45deg);
+  background-color: blue;
 }
 
-.victory5{
-	display: none;
+.victory8-js {
+  display: none;
 }
 
-.victory5::after{
-	position: absolute;
-	top: 75px;
-	left: 0;
-content: '';
-width: 150px;
-height: 5px;
-transform: rotate(90deg);
-background-color: blue;
+.victory8-js.is-open {
+  display: flex;
 }
 
-.victory6{
-	display: none;
-}
-
-.victory6::after{
-	position: absolute;
-	top: 75px;
-	left: 50px;
-content: '';
-width: 150px;
-height: 5px;
-transform: rotate(90deg);
-background-color: blue;
-}
-
-.victory7{
-	display: none;
-}
-
-.victory7::after{
-	position: absolute;
-	top: 72px;
-	left: -22px;
-content: '';
-width: 150px;
-height: 5px;
-transform: rotate(45deg);
-background-color: blue;
-}
-
-.victory8{
-	display: none;
-}
-
-.victory8::after{
-	position: absolute;
-	top: 70px;
-	left: -22px;
-content: '';
-width: 200px;
-height: 5px;
-transform: rotate(-45deg);
-background-color: blue;
+.victory8-js::after {
+  position: absolute;
+  top: 148px;
+  left: -59px;
+  content: "";
+  width: 422px;
+  height: 10px;
+  border-radius: 3px;
+  transform: rotate(-45deg);
+  background-color: blue;
 }
