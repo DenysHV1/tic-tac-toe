@@ -9,9 +9,10 @@
 
 html,
 body {
+	font-family: "Kaushan Script", cursive;
   height: 100%;
   width: 100%;
-  background-color: rgb(167, 167, 167);
+   background: -webkit-linear-gradient(90deg,#000000,#75151d,#000000);background: linear-gradient(90deg,#000000,#75151d,#000000);
 }
 
 .container {
@@ -28,7 +29,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: rgb(193, 193, 193);
+  /* background-color: rgb(193, 193, 193); */
   width: 304px;
   height: 304px;
   border-radius: 5px;
@@ -67,6 +68,8 @@ body {
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   transition: transform 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
   cursor: pointer;
+  font-family: "Kaushan Script", cursive;
+  color: white;
 }
 
 .remove-js:hover {
@@ -77,6 +80,7 @@ body {
   position: absolute;
   top: -1%;
   left: 8%;
+  color: white;
 }
 
 .victory1-js {
@@ -260,12 +264,12 @@ body {
     90deg,
     #0011ff,
     #8c00ff
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  );
   background: linear-gradient(
     90deg,
     #0011ff,
     #8c00ff
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  );
   padding: 72px 24px 24px 24px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -356,6 +360,7 @@ body {
   cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  font-family: "Kaushan Script", cursive;
 }
 
 .modal-button:hover {
@@ -416,6 +421,7 @@ body {
   background: linear-gradient(90deg, #00c4cc, #6420ff, #7d2ae7);
   cursor: pointer;
   transition: transform 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  font-family: "Kaushan Script", cursive;
 }
 
 .menu-js:hover {
