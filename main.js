@@ -1,8 +1,46 @@
 const game = document.querySelector(".game-js");
-const counter = document.querySelector(".counter-js");
-const remove = document.querySelector(".remove-js");
+//! game menu
+const modal = document.querySelector(".modal-overlay");
+function playersMenu() {
+  const menuBtnEl = document.querySelector(".menu-js");
+  const closeModalButton = document.querySelector(".button-modal-close");
+  menuBtnEl.addEventListener("click", () => {
+    modal.classList.toggle("is-open");
+  });
+  closeModalButton.addEventListener("click", () => {
+    modal.classList.remove("is-open");
+  });
+}
+playersMenu();
 
-// place for items
+const namePlayer1 = document.querySelector(".gamer-name1-js");
+const namePlayer2 = document.querySelector(".gamer-name2-js");
+const form = document.querySelector(".modal-form");
+
+//! choice names
+form.addEventListener("submit", choiceSettings);
+function choiceSettings(event) {
+  event.preventDefault();
+  const name1 = event.target.elements.userName1.value;
+  const name2 = event.target.elements.userName2.value;
+  if (name1.length > 10) {
+    return;
+  }
+
+  if (name2.length > 10) {
+    return;
+  }
+  namePlayer1.textContent = name1;
+  namePlayer2.textContent = name2;
+  modal.classList.remove("is-open");
+}
+//! victory counters
+const user1 = document.querySelector(".player1-js");
+const user2 = document.querySelector(".player2-js");
+let victoryCounter1 = 0;
+let victoryCounter2 = 0;
+
+//*  place for items
 let btn = {
   btn1: "",
   btn2: "",
@@ -15,7 +53,7 @@ let btn = {
   btn9: "",
 };
 
-//place for victory line from style
+//! place for victory line from style
 let victory = game.querySelectorAll("span");
 
 let [
@@ -32,8 +70,11 @@ let [
 // 0 = ❌; 1 = ⭕;
 let num = 0;
 
-//our move
+//! our moves
+const counter = document.querySelector(".counter-js");
 let count = 0;
+
+//todo GAME
 
 game.addEventListener("click", oneClick);
 
@@ -45,20 +86,20 @@ function oneClick(evt) {
     return;
   }
 
-// only one click to 1 place
+  //* only one click to 1 place
   if (click.textContent.length === 1) {
     return;
   }
 
-//after last check + 1 to count
+  //*after last check + 1 to count
   count += 1;
   counter.textContent = count;
 
-//main code for game
+  //*main code for game
   num = num === 0 ? 1 : 0;
   num === 1 ? (click.textContent = "❌") : (click.textContent = "⭕");
 
-//where were you clicked? 
+  //*where were you clicked?
   let { btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9 } = btn;
   switch (myBtn) {
     case "1":
@@ -90,31 +131,95 @@ function oneClick(evt) {
       break;
   }
 
-// victory variants
+  //* victory variants
   if (btn1 === btn2 && btn2 === btn3 && btn1 && btn2 && btn3) {
     victory1.classList.add("is-open");
     game.removeEventListener("click", oneClick);
+    if (btn1 === "❌") {
+      victoryCounter1 += 1;
+      user1.textContent = victoryCounter1;
+    }
+    if (btn1 === "⭕") {
+      victoryCounter2 += 1;
+      user2.textContent = victoryCounter2;
+    }
   } else if (btn4 === btn5 && btn5 === btn6 && btn4 && btn5 && btn6) {
     victory2.classList.add("is-open");
     game.removeEventListener("click", oneClick);
+    if (btn4 === "❌") {
+      victoryCounter1 += 1;
+      user1.textContent = victoryCounter1;
+    }
+    if (btn4 === "⭕") {
+      victoryCounter2 += 1;
+      user2.textContent = victoryCounter2;
+    }
   } else if (btn7 === btn8 && btn8 === btn9 && btn7 && btn8 && btn9) {
     victory3.classList.add("is-open");
     game.removeEventListener("click", oneClick);
+    if (btn7 === "❌") {
+      victoryCounter1 += 1;
+      user1.textContent = victoryCounter1;
+    }
+    if (btn7 === "⭕") {
+      victoryCounter2 += 1;
+      user2.textContent = victoryCounter2;
+    }
   } else if (btn1 === btn4 && btn4 === btn7 && btn1 && btn4 && btn7) {
     victory4.classList.add("is-open");
     game.removeEventListener("click", oneClick);
+    if (btn4 === "❌") {
+      victoryCounter1 += 1;
+      user1.textContent = victoryCounter1;
+    }
+    if (btn4 === "⭕") {
+      victoryCounter2 += 1;
+      user2.textContent = victoryCounter2;
+    }
   } else if (btn2 === btn5 && btn5 === btn8 && btn2 && btn5 && btn8) {
     victory5.classList.add("is-open");
     game.removeEventListener("click", oneClick);
+    if (btn2 === "❌") {
+      victoryCounter1 += 1;
+      user1.textContent = victoryCounter1;
+    }
+    if (btn2 === "⭕") {
+      victoryCounter2 += 1;
+      user2.textContent = victoryCounter2;
+    }
   } else if (btn3 === btn6 && btn6 === btn9 && btn3 && btn6 && btn9) {
     victory6.classList.add("is-open");
     game.removeEventListener("click", oneClick);
+    if (btn3 === "❌") {
+      victoryCounter1 += 1;
+      user1.textContent = victoryCounter1;
+    }
+    if (btn3 === "⭕") {
+      victoryCounter2 += 1;
+      user2.textContent = victoryCounter2;
+    }
   } else if (btn3 === btn5 && btn5 === btn7 && btn3 && btn5 && btn7) {
     victory8.classList.add("is-open");
     game.removeEventListener("click", oneClick);
+    if (btn5 === "❌") {
+      victoryCounter1 += 1;
+      user1.textContent = victoryCounter1;
+    }
+    if (btn5 === "⭕") {
+      victoryCounter2 += 1;
+      user2.textContent = victoryCounter2;
+    }
   } else if (btn1 === btn5 && btn5 === btn9 && btn1 && btn5 && btn9) {
     victory7.classList.add("is-open");
     game.removeEventListener("click", oneClick);
+    if (btn9 === "❌") {
+      victoryCounter1 += 1;
+      user1.textContent = victoryCounter1;
+    }
+    if (btn9 === "⭕") {
+      victoryCounter2 += 1;
+      user2.textContent = victoryCounter2;
+    }
   }
   btn = { btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9 };
 }
@@ -122,8 +227,9 @@ function oneClick(evt) {
 removeGame();
 const buttons = game.querySelectorAll("button");
 
-//remove button
+//! remove button
 function removeGame() {
+  const remove = document.querySelector(".remove-js");
   remove.addEventListener("click", () => {
     buttons.forEach((item) => {
       item.textContent = "";
