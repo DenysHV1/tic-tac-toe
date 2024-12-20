@@ -255,3 +255,16 @@ function removeGame() {
     };
   });
 }
+
+game.onmousemove = function (e) {
+  const el = document.querySelector(".el-js");
+  let x = e.clientX;
+  let y = e.clientY;
+
+  el.classList.add("active");
+  el.style.top = `${y}px`;
+  el.style.left = `${x}px`;
+  game.onmouseleave = function () {
+    el.classList.remove("active");
+  };
+};

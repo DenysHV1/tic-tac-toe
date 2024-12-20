@@ -427,3 +427,24 @@ body {
 .menu-js:hover {
   transform: scale(1.05);
 }
+
+.el-js{
+  padding: 10px;
+  border: 1ps solid black;
+  background-color: #24009c;
+  color: #ff1226;
+  border-radius: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  max-width: 80px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.el-js.active{
+  opacity: 1;
+  visibility: visible;
+}
